@@ -94,7 +94,7 @@ func ParseTypeNode(node *sitter.Node, sourceCode []byte) string {
 		return fmt.Sprintf("%s<%s>", genericName, strings.Join(strArgs, ", "))
 
 	default:
-		return "UNKNOWN: " + node.Content(sourceCode)
+		return "UNKNOWN: " + NormalizeContent(node.Content(sourceCode))
 	}
 }
 
