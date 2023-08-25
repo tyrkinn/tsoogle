@@ -1,4 +1,4 @@
-module github.com/tyrkinn/go_ts
+module github.com/tyrkinn/tsoogle
 
 go 1.20
 
