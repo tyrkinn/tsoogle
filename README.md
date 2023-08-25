@@ -6,4 +6,4 @@ Developed with Golang, [Treesitter](https://github.com/tree-sitter/tree-sitter) 
 
 Hugely inspired by [Tsoding](https://github.com/tsoding) and his [Coogle](https://www.youtube.com/watch?v=wK1HjnwDQng&t=1s) project
 
-Now project in early stage of development so there are a lot of bugs there
+Now project in early stage of development so there are a lot of bugs
