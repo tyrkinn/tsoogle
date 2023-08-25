@@ -86,20 +86,11 @@ func ParseTypeNode(node *sitter.Node, sourceCode []byte) string {
 		strArgs := make([]string, 0, 4)
 		for i := 0; i < int(typeArgs.ChildCount()); i++ {
 			arg := typeArgs.Child(i)
-			switch arg.Type() {
-			case "identifier", "predefined_type", "type_identifier":
-				strArgs = append(strArgs, arg.Content(sourceCode))
-				break
-			case "function_type":
-				strArgs = append(strArgs, ParseFunctionTypeNode(arg, sourceCode))
-				break
-			case "generic_type", "nested_type_identifier", "object_type", "intersection_type", "array_type", "union_type":
+			if arg.IsNamed() {
 				strArgs = append(strArgs, ParseTypeNode(arg, sourceCode))
-				break
-			default:
-				break
 			}
 		}
+
 		return fmt.Sprintf("%s<%s>", genericName, strings.Join(strArgs, ", "))
 
 	default:
